@@ -69,7 +69,7 @@ app.get("/login/facebook", passport.authenticate("facebook"));
 //@desc   - a route to facebook auth
 //@access - PUBLIC
 app.get(
-  "login/facebook/callback",
+  "/login/facebook/callback",
   passport.authenticate("facebook", {
     failureRedirect: "/login"
   }),
