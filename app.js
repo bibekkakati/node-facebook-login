@@ -38,7 +38,6 @@ app.set("view engine", "ejs");
 app.use(require("morgan")("combined"));
 app.use(require("cookie-parser")());
 app.use(require("body-parser").urlencoded({ extended: false }));
-app.use(passport.initialize());
 app.use(
   require("express-session")({
     secret: "node app",
@@ -46,6 +45,8 @@ app.use(
     saveUninitialized: true
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
 
 //@route  - GET  /
 //@desc   - a route to home page
