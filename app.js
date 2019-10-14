@@ -80,7 +80,7 @@ app.get(
 //@access - PRIVATE
 app.get(
   "/profile",
-  require("connect-ensure-login").ensureLoggedIn("/"),
+  require("connect-ensure-login").ensureLoggedIn(),
   (req, res) => {
     res.render("profile", { user: req.user });
   }
