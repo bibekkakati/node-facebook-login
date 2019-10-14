@@ -7,7 +7,7 @@ passport.use(
     {
       clientID: "1270414239805877",
       clientSecret: "118b8838694f0675622c5b9475914f0d",
-      callbackURL: "http://localhost:3000/login/facebook/return"
+      callbackURL: "https://node-facebook-login.herokuapp.com/"
     },
     function(accessToken, refreshToken, profile, cb) {
       return cb(null, profile);
