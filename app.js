@@ -7,7 +7,8 @@ passport.use(
     {
       clientID: "1270414239805877",
       clientSecret: "118b8838694f0675622c5b9475914f0d",
-      callbackURL: "https://node-facebook-login.herokuapp.com/login/facebook/callback"
+      callbackURL:
+        "https://node-facebook-login.herokuapp.com/login/facebook/callback"
     },
     function(accessToken, refreshToken, profile, cb) {
       return cb(null, profile);
@@ -69,9 +70,11 @@ app.get("/login/facebook", passport.authenticate("facebook"));
 //@access - PUBLIC
 app.get(
   "login/facebook/callback",
-  passport.authenticate("facebook", {successRedirect: '/profile', failureRedirect: "/login" }),
+  passport.authenticate("facebook", {
+    failureRedirect: "/login"
+  }),
   (req, res) => {
-    res.redirect("/profile");
+    res.redirect("/");
   }
 );
 
