@@ -69,7 +69,7 @@ app.get("/login/facebook", passport.authenticate("facebook"));
 //@access - PUBLIC
 app.get(
   "login/facebook/callback",
-  passport.authenticate("facebook", { failureRedirect: "/login" }),
+  passport.authenticate("facebook", {successRedirect: '/profile', failureRedirect: "/login" }),
   (req, res) => {
     res.redirect("/profile");
   }
