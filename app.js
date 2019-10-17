@@ -5,10 +5,10 @@ const Strategy = require("passport-facebook").Strategy;
 passport.use(
   new Strategy(
     {
-      clientID: "1270414239805877",
-      clientSecret: "118b8838694f0675622c5b9475914f0d",
+      clientID: //get it form facebook app,
+      clientSecret: //get it from facebook app,
       callbackURL:
-        "https://node-facebook-login.herokuapp.com/login/facebook/callback"
+        "https://domain.com/login/facebook/callback" //replace the domain name
     },
     function(accessToken, refreshToken, profile, cb) {
       return cb(null, profile);
